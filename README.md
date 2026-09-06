@@ -6,7 +6,7 @@ Bewitched is a complete marketplace application composed of a native Android cli
 
 The project includes user authentication, product management, shopping cart, order processing, payments, administration, database migrations, cloud storage and deployment on AWS.
 
-> The complete source code is kept in a private repository.  
+> The complete source code is maintained in a private repository.  
 > This public repository is intended as a technical portfolio and project showcase.
 
 ---
@@ -24,7 +24,7 @@ The application communicates with external services such as Stripe and AWS and u
 
 ## Main Features
 
-### User features
+### User Features
 
 - User registration and login
 - JWT authentication
@@ -110,36 +110,9 @@ The application communicates with external services such as Stripe and AWS and u
 
 ## Architecture
 
-```text
-                    INTERNET
-                        │
-                        ▼
-               HTTPS / Custom Domain
-                        │
-                        ▼
-          Application Load Balancer
-                        │
-                        ▼
-                 Amazon ECS
-                  AWS Fargate
-                        │
-                        ▼
-               Spring Boot API
-                  │          │
-                  │          └──────────► Amazon S3
-                  │
-                  ▼
-               Amazon RDS
-                  MySQL
-                  
-Android Application
-        │
-        └──────── REST API ─────────────► Backend
+## Architecture
 
-Backend
-   │
-   └────────────────────────────────────► Stripe
-```
+![Bewitched AWS Architecture](docs/architecture/diagrama_aws.png)
 
 The backend is packaged as a Docker image and stored in **Amazon ECR**.
 
@@ -236,33 +209,42 @@ This allows the database schema and application code to evolve together.
 
 ## Screenshots
 
-### Login
-
-![Bewitched Login](docs/screenshots/login.png)
-
-### Marketplace
-
-![Bewitched Home](docs/screenshots/pantalla_principal.png)
-
-### Product Catalog
-
-![Bewitched Product Catalog](docs/screenshots/catalogo.png)
-
-### Product Detail
-
-![Bewitched Product Detail](docs/screenshots/ficha_producto.png)
-
-### Shopping Cart
-
-![Bewitched Shopping Cart](docs/screenshots/carrito.png)
-
-### User Profile
-
-![Bewitched User Profile](docs/screenshots/perfil.png)
-
-### Administration
-
-![Bewitched Administration](docs/screenshots/perfil_admin.png)
+<table>
+  <tr>
+    <td align="center">
+      <img src="docs/screenshots/login.png" width="220"><br>
+      <b>Login</b>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/pantalla_principal.png" width="220"><br>
+      <b>Home</b>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/catalogo.png" width="220"><br>
+      <b>Product Catalog</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs/screenshots/ficha_producto.png" width="220"><br>
+      <b>Product Detail</b>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/carrito.png" width="220"><br>
+      <b>Shopping Cart</b>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/perfil.png" width="220"><br>
+      <b>User Profile</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs/screenshots/perfil_admin.png" width="220"><br>
+      <b>Administration</b>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -313,27 +295,47 @@ Application available
 
 ---
 
+## Selected Code Examples
+
+A small selection of source code is included to demonstrate key implementation areas while keeping the complete application private.
+
+### Backend
+
+- [REST Product Controller](examples/backend/ProductoControllerExample.java)
+- [Spring Security Configuration](examples/backend/ConfiguracionSeguridadExample.java)
+- [Flyway Migration](examples/backend/FlywayMigrationExample.sql)
+
+### Android
+
+- [Retrofit Product API Service](examples/android/ProductoApiServiceExample.kt)
+
+> These are selected examples extracted from the private Bewitched codebase and included for portfolio purposes.
+
+---
+
 ## Source Code
 
-The complete source code is maintained in a **private repository**.
+The complete application source code is maintained in a **private repository**.
 
-Selected code examples may be included in this portfolio repository to demonstrate architecture, backend development, Android development and security practices without publishing the complete commercial application.
+This public portfolio contains selected implementation examples, screenshots and technical documentation to demonstrate the architecture and technologies used without publishing the complete application.
 
 ---
 
 ## Project Status
 
-**Active development**
+**Active Development**
 
 Bewitched started as a full-stack marketplace project and has progressively evolved to include:
 
 - Cloud deployment
-- Docker
+- Docker containerization
 - AWS infrastructure
 - Database versioning with Flyway
-- Payment processing
+- Stripe payment processing
 - Security improvements
 - Production-oriented configuration
+- Android client development
+- REST API integration
 
 ---
 
@@ -343,4 +345,4 @@ Bewitched started as a full-stack marketplace project and has progressively evol
 
 Junior Java Backend / Android Developer
 
-**Main technologies:** Java · Spring Boot · Kotlin · Android · SQL · Docker · AWS
+**Main Technologies:** Java · Spring Boot · Kotlin · Android · SQL · Docker · AWS
