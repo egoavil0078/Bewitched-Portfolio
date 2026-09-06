@@ -238,23 +238,31 @@ This allows the database schema and application code to evolve together.
 
 ### Login
 
-Screenshot coming soon.
+![Bewitched Login](docs/screenshots/login.png)
 
 ### Marketplace
 
-Screenshot coming soon.
+![Bewitched Home](docs/screenshots/pantalla_principal.png)
+
+### Product Catalog
+
+![Bewitched Product Catalog](docs/screenshots/catalogo.png)
 
 ### Product Detail
 
-Screenshot coming soon.
+![Bewitched Product Detail](docs/screenshots/ficha_producto.png)
 
 ### Shopping Cart
 
-Screenshot coming soon.
+![Bewitched Shopping Cart](docs/screenshots/carrito.png)
+
+### User Profile
+
+![Bewitched User Profile](docs/screenshots/perfil.png)
 
 ### Administration
 
-Screenshot coming soon.
+![Bewitched Administration](docs/screenshots/perfil_admin.png)
 
 ---
 
