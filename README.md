@@ -110,8 +110,6 @@ The application communicates with external services such as Stripe and AWS and u
 
 ## Architecture
 
-## Architecture
-
 ![Bewitched AWS Architecture](docs/architecture/diagrama_aws.png)
 
 The backend is packaged as a Docker image and stored in **Amazon ECR**.
@@ -122,43 +120,6 @@ The database is hosted in **Amazon RDS** and protected inside the application's 
 
 ---
 
-## AWS Network Architecture
-
-The infrastructure uses public and private subnets distributed across multiple Availability Zones.
-
-```text
-                    Internet
-                       │
-                Internet Gateway
-                       │
-          ┌────────────┴────────────┐
-          │                         │
-    Public Subnet 1           Public Subnet 2
-          │                         │
-          └────────── ALB ──────────┘
-                       │
-          ┌────────────┴────────────┐
-          │                         │
-   Private Subnet 1          Private Subnet 2
-        ECS Task                  ECS Task
-          │                         │
-          └────────────┬────────────┘
-                       │
-                       ▼
-                  Amazon RDS
-```
-
-Security Groups restrict communication between each layer of the application.
-
-For example:
-
-```text
-Internet → ALB       : HTTPS / 443
-ALB → ECS            : Backend port
-ECS → RDS            : MySQL / 3306
-```
-
----
 
 ## Security
 
